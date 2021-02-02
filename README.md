@@ -6,16 +6,16 @@ Launches an application server using terraform
 VPC named "web-production"  with CIDR 10.0.0.0/16 and  internet gateway is created.
 Created both public and private subnets in all the availability zones
 Route tables were created and assosciated to subnets.
-Natgateway is created and assosciated
+Natgateway is created and assosciated.
 
-Application Load balancer is created in public subnets
-Web server ASG is deployed in private subnets with restricted security groups
+Application Load balancer is created in public subnets.
+Web server ASG is deployed in private subnets with restricted security groups.
 
 Efs is mounted on /efs 
 
 Files:
-  alarm.tf          - health check alarm . 
-  asg.tf            - ALB, ASG, security groups etc.,.
+        alarm.tf          - health check alarm . 
+        asg.tf            - ALB, ASG, security groups etc.,.
 	ec2.tf            - Latest image and security group for instances. 
 	mount.tf          - EFS creation, mount and encryption.
 	notification.tf   - sns notification and subscription.
@@ -29,6 +29,7 @@ Input:
   
 * IMP: Please provide variable "key" in vars.tf file . 
   mail id , aws_access_key, aws_secret_key  can be given while executing terraform command or can be given in vars.tf file as well.
+    If region name is changed in vars.tf file , then please change the availablility zones list in vars.tf file.
   
   
   
